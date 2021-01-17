@@ -92,6 +92,7 @@ class PackageMojo : AbstractHelmMojo() {
 					""
 				}
 				executeCmd("$helm repo add chartRepo $chartRepoUrl$authParams")
+			}
 			executeCmd("$helm dependency update", directory = targetHelmDir)
 			executeCmd("$helm package ${chartName()} --version $chartVersion")
 
